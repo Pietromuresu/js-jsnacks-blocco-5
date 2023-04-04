@@ -36,11 +36,44 @@ const users = [
   },
 ]
 
+
+const listUnderage = document.querySelector('.listUnder');
+const listOver65 = document.querySelector('.listOver');
+
 const underage = users.filter(user => (user.age <= 18));
 console.log(underage);
 
 const over65 = users.filter(user => (user.age >= 65));
 console.log(over65);
 
+const {name, surname, age} = users;
+
+underage.forEach(user => {
+displayListInDom(user) 
+});
+
+over65.forEach(user => {
+  displayListOverInDom(user)
+})
 
 
+
+function displayListInDom(user) {
+  listUnderage.innerHTML += `
+  <li>
+  ${user.name} ${user.surname} <br>
+  anni: ${user.age}<br>
+  </li>
+   `
+
+};
+
+function displayListOverInDom(user) {
+  listOver65.innerHTML += `
+  <li>
+  ${user.name} ${user.surname} <br>
+  anni: ${user.age}<br>
+  </li>
+   `
+
+};
