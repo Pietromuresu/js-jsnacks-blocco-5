@@ -15,7 +15,7 @@ Dobbiamo creare un nuovo elenco dove ogni studente ha un nome-cognome, matricola
 
 ## *** BONUS
 
-Aggiungere la foto o l’avatar dello studente e stampare tutti gli studenti con delle card HTML in ordine alfabetico per 
+Aggiungere la foto o l’avatar dello studente e stampare tutti gli studenti con delle card HTML in ordine alfabetico per cognome
 
 
 ## *SNACK 4*

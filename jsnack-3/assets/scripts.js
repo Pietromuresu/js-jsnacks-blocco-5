@@ -1,79 +1,84 @@
-const users = [
+const students = [
   {
-    name: "Lucia",
-    surname: "Magri",
-    age: 23,
+    name: "Marco della Rovere",
+    Id: "213",
+    grades: 78,
   },
   {
-    name: "Marco",
-    surname: "Biagi",
-    age: 12,
+    name: "Paola Cortellessa",
+    Id: "110",
+    grades: 96,
   },
   {
-    name: "Maria",
-    surname: "Ganau",
-    age: 65,
+    name: "Andrea Montegna",
+    Id:  "250",
+    grades: 48,
   },
   {
-    name: "Riccardo",
-    surname: "Rossi",
-    age: 18,
+    name: "Gaia Borromini",
+    Id: "145",
+    grades: 74,
   },
   {
-    name: "Angela",
-    surname: "Magri",
-    age: 23,
+    name: "Luigi Grimaldello",
+    Id: "196",
+    grades: 68,
   },
   {
-    name: "Angelica",
-    surname: "Magrini",
-    age: 13,
+    name: "Piero della Francesca",
+    Id: "102",
+    grades: 50,
   },
   {
-    name: "Antonio",
-    surname: "Magrissimi",
-    age: 81,
+    name: "Francesca da Polenta",
+    Id: "120",
+    grades: 84,
   },
+  
 ]
 
 
-const listUnderage = document.querySelector('.listUnder');
-const listOver65 = document.querySelector('.listOver');
+const studentUppercase = students.map(student => 
+  {
+    return student.name.toUpperCase()
+  }
+  )
+console.log(studentUppercase);
 
-const underage = users.filter(user => (user.age <= 18));
-console.log(underage);
 
-const over65 = users.filter(user => (user.age >= 65));
-console.log(over65);
+for (let i = 0; i < studentUppercase.length; i++){
+  document.querySelector('.listUppercase').innerHTML += `
+  <li>${studentUppercase[i]}</li> <br>
+  `
+}
 
-const {name, surname, age} = users;
 
-underage.forEach(user => {
-displayListInDom(user) 
-});
+const studentOver70Scores = students.filter(student => {
+    if(student.grades > 70) {
+      return student
+  }
+}
 
-over65.forEach(user => {
-  displayListOverInDom(user)
+  )
+  console.log(studentOver70Scores);
+
+
+  for (let i = 0; i < studentOver70Scores.length; i++){
+    document.querySelector('.listGradesOver70').innerHTML += `
+    <li>${studentOver70Scores[i].name} - ${studentOver70Scores[i].grades}</li> <br>
+    `
+  }
+
+
+const studentIdover120 = students.filter(student => {
+  if(student.grades > 70 && student.Id > 120){
+    return student
+  }
 })
 
 
-
-function displayListInDom(user) {
-  listUnderage.innerHTML += `
-  <li>
-  ${user.name} ${user.surname} <br>
-  anni: ${user.age}<br>
-  </li>
-   `
-
-};
-
-function displayListOverInDom(user) {
-  listOver65.innerHTML += `
-  <li>
-  ${user.name} ${user.surname} <br>
-  anni: ${user.age}<br>
-  </li>
-   `
-
-};
+for (let i = 0; i < studentIdover120.length; i++){
+  document.querySelector('.listGradesIdOver').innerHTML += `
+  <li>${studentIdover120[i].name} - ${studentIdover120[i].grades} - #${studentIdover120[i].Id}</li> <br>
+  `
+}
