@@ -1,7 +1,7 @@
 const biciclette = [
   {
     name: "Bici-1",
-    weight: 33,
+    weight: 3,
   },
   {
     name: "Bici-2",
@@ -22,20 +22,29 @@ const biciclette = [
 
 ]
 
+console.log(biciclette);
 
 const minorWeight = biciclette.map(bici => {
   return bici.weight
-;
+
 })
 console.log(minorWeight);
 
 const minor = Math.min.apply(null,minorWeight);
 console.log(minor);
 
+
 const weightless = biciclette.filter(bici => {
+  
   if(bici.weight === minor){
     return bici
   }
 })
 
-console.log(weightless);
+const nome = weightless[0].name
+const peso = weightless[0].weight
+
+document.querySelector('.container').innerHTML = `
+<h1 style=" width: 600px; margin: 0 auto">  ${nome} che pesa ${peso} Kg</h1>
+`
+
