@@ -19,8 +19,7 @@ Aggiungere la foto o l’avatar dello studente e stampare tutti gli studenti con
 
 
 ## *SNACK 4*
-Abbiamo un elenco degli studenti di una facoltà , identificati da _id_, _Nome_ e _somma totale_
-dei loro voti di esame...
+Abbiamo un elenco degli studenti di una facoltà , identificati da _id_, _Nome_ e _somma totale_ dei loro voti di esame...
 1. Per preparare l’aula di un nuovo corso, dobbiamo stampare le targhe col nome degli studenti:
 creare una lista contenente il loro nome tutto in maiuscolo
 ES (Marco della Rovere => MARCO DELLA ROVERE);
@@ -32,13 +31,13 @@ Questo è l’elenco degli studenti:
 
 |Name  | Id  | Grades|
 |:---|:---|:---|
-| Marco della Rovere    | 213  |78       <br>
-| Paola Cortellessa     | 110  |  96     <br>
-| Andrea Mantegna 	     | 250 |48       <br>
-| Gaia Borromini        | 145  |   74    <br>
-| Luigi Grimaldello 	   | 196 |  68     <br>
-| Piero della Francesca | 102  |50       <br>
-| Francesca da Polenta  | 120  |84       <br>
+| Marco della Rovere    | 213  | 78    
+| Paola Cortellessa     | 110  | 96    
+| Andrea Mantegna 	    | 250  | 48    
+| Gaia Borromini        | 145  | 74    
+| Luigi Grimaldello 	  | 196  | 68    
+| Piero della Francesca | 102  | 50    
+| Francesca da Polenta  | 120  | 84    
 (NB: Si inverte l’ordine delle lezioni objects 3 e 2)
 
 ## *SNACK 5*
