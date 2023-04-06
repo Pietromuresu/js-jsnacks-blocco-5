@@ -1,79 +1,41 @@
-const users = [
+const biciclette = [
   {
-    name: "Lucia",
-    surname: "Magri",
-    age: 23,
+    name: "Bici-1",
+    weight: 33,
   },
   {
-    name: "Marco",
-    surname: "Biagi",
-    age: 12,
+    name: "Bici-2",
+    weight: 53,
   },
   {
-    name: "Maria",
-    surname: "Ganau",
-    age: 65,
+    name: "Bici-3",
+    weight: 73,
   },
   {
-    name: "Riccardo",
-    surname: "Rossi",
-    age: 18,
+    name: "Bici-4",
+    weight: 25,
   },
   {
-    name: "Angela",
-    surname: "Magri",
-    age: 23,
+    name: "Bici-5",
+    weight: 30,
   },
-  {
-    name: "Angelica",
-    surname: "Magrini",
-    age: 13,
-  },
-  {
-    name: "Antonio",
-    surname: "Magrissimi",
-    age: 81,
-  },
+
 ]
 
 
-const listUnderage = document.querySelector('.listUnder');
-const listOver65 = document.querySelector('.listOver');
+const minorWeight = biciclette.map(bici => {
+  return bici.weight
+;
+})
+console.log(minorWeight);
 
-const underage = users.filter(user => (user.age <= 18));
-console.log(underage);
+const minor = Math.min.apply(null,minorWeight);
+console.log(minor);
 
-const over65 = users.filter(user => (user.age >= 65));
-console.log(over65);
-
-const {name, surname, age} = users;
-
-underage.forEach(user => {
-displayListInDom(user) 
-});
-
-over65.forEach(user => {
-  displayListOverInDom(user)
+const weightless = biciclette.filter(bici => {
+  if(bici.weight === minor){
+    return bici
+  }
 })
 
-
-
-function displayListInDom(user) {
-  listUnderage.innerHTML += `
-  <li>
-  ${user.name} ${user.surname} <br>
-  anni: ${user.age}<br>
-  </li>
-   `
-
-};
-
-function displayListOverInDom(user) {
-  listOver65.innerHTML += `
-  <li>
-  ${user.name} ${user.surname} <br>
-  anni: ${user.age}<br>
-  </li>
-   `
-
-};
+console.log(weightless);
