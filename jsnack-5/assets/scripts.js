@@ -1,79 +1,64 @@
-const users = [
+let squadre = [
   {
-    name: "Lucia",
-    surname: "Magri",
-    age: 23,
+    nome: "Juventus",
+    punti: 0,
+    falli: 0,
   },
   {
-    name: "Marco",
-    surname: "Biagi",
-    age: 12,
+    nome: "Milan",
+    punti: 0,
+    falli: 0,
   },
   {
-    name: "Maria",
-    surname: "Ganau",
-    age: 65,
+    nome: "Inter",
+    punti: 0,
+    falli: 0,
   },
   {
-    name: "Riccardo",
-    surname: "Rossi",
-    age: 18,
+    nome: "Hellas Verona",
+    punti: 0,
+    falli: 0,
   },
   {
-    name: "Angela",
-    surname: "Magri",
-    age: 23,
+    nome: "Sampdoria",
+    punti: 0,
+    falli: 0,
   },
   {
-    name: "Angelica",
-    surname: "Magrini",
-    age: 13,
+    nome: "Genoa",
+    punti: 0,
+    falli: 0,
   },
-  {
-    name: "Antonio",
-    surname: "Magrissimi",
-    age: 81,
-  },
+
 ]
 
-
-const listUnderage = document.querySelector('.listUnder');
-const listOver65 = document.querySelector('.listOver');
-
-const underage = users.filter(user => (user.age <= 18));
-console.log(underage);
-
-const over65 = users.filter(user => (user.age >= 65));
-console.log(over65);
-
-const {name, surname, age} = users;
-
-underage.forEach(user => {
-displayListInDom(user) 
-});
-
-over65.forEach(user => {
-  displayListOverInDom(user)
+// creo i valori di punti e falli
+squadre.forEach(squadra => {
+  squadra.punti = getRandomNumbers(0, 40);
+  squadra.falli = getRandomNumbers(0, 90);
 })
 
 
+console.log(squadre);
 
-function displayListInDom(user) {
-  listUnderage.innerHTML += `
-  <li>
-  ${user.name} ${user.surname} <br>
-  anni: ${user.age}<br>
-  </li>
-   `
+// creo un nuovo array con solo i nomi e i falli subiti
+const falliSquadre = squadre.map(squadra => {
+const {nome, falli} = squadra;
+  return `${nome} - ${falli}`
+})
 
-};
 
-function displayListOverInDom(user) {
-  listOver65.innerHTML += `
-  <li>
-  ${user.name} ${user.surname} <br>
-  anni: ${user.age}<br>
-  </li>
-   `
+console.log(falliSquadre);
 
-};
+
+// li inserisco nella lista in pagina
+for (let i = 0; i < falliSquadre.length; i++){
+  document.querySelector('.listaFalli').innerHTML += `
+  <li> ${falliSquadre[i]} </li>
+  `
+}
+
+
+function getRandomNumbers(min, max) {
+ return Math.floor(Math.random() * (max - min) + min)
+}
